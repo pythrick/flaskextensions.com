@@ -46,6 +46,7 @@ docker-compose exec fexservice bash
 
 - Python3+
 - Poetry
+- Pre-Commit
 - A running instance of some SQL database (sqlite, postgres, mysql)
 
 ## Settings
@@ -67,6 +68,12 @@ This are the required environment variables
 > **NOTE:** You can put those variables in a file called `.env` in the root folder `the same place where `pyproject.toml` is located.
 
 > **NOTE 2:** You can also set those values under each service `settings.toml` file.
+
+## Installing pre-commit hooks
+
+```bash
+pre-commit install
+```
 
 ## Installing using Poetry
 
