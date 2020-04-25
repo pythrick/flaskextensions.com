@@ -2,10 +2,11 @@
 Autor - Jairo Matos da Rocha <devjairomr@gmail.com>
 """
 from dynaconf import settings
-
 from loguru import logger
 
-formatter = "[ {level.icon}{level:^10}] {time:YYYY-MM-DD hh:mm:ss} {file} - {name}: {message}"
+formatter = (
+    "[ {level.icon}{level:^10}] {time:YYYY-MM-DD hh:mm:ss} {file} - {name}: {message}"
+)
 
 
 try:
@@ -18,9 +19,7 @@ except AttributeError:
     file_name = "logger.log"
 
 # logger.add(sys.stderr, format=formatter, level=level,colorize=True)
-logger.add(
-    file_name, format=formatter, level=level, rotation="500 MB", colorize=True
-)
+logger.add(file_name, format=formatter, level=level, rotation="500 MB", colorize=True)
 
 
 if __name__ == "__main__":

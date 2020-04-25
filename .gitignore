@@ -139,3 +139,8 @@ temp/
 
 # No need to send lock file
 poetry.lock
+.idea
+.idea/
+.idea/*
+.idea/**/
+.idea/**/*

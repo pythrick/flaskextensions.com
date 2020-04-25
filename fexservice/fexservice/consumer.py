@@ -1,10 +1,9 @@
 import dataset
 from dynaconf import settings
-from github import Github
-
-from fexservice.validator import validators
 from fexservice.exception import ConsumerCritical, ConsumerWarning
 from fexservice.logger import logger
+from fexservice.validator import validators
+from github import Github
 
 # Fire the validator settings
 settings.validators.register(*validators)

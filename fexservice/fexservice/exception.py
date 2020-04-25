@@ -4,9 +4,6 @@ As exceções estão organizada por nivel
 https://docs.sqlalchemy.org/en/13/core/exceptions.html
 https://pygithub.readthedocs.io/en/latest/utilities.html
 """
-from github.GithubException import BadAttributeException  # TODO
-from github.GithubException import BadUserAgentException  # TODO
-from github.GithubException import IncompletableObject  # TODO
 from github.GithubException import (
     BadCredentialsException,
     RateLimitExceededException,

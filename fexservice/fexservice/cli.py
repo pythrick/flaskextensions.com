@@ -9,10 +9,9 @@ from datetime import datetime, timedelta
 from typing import Callable
 
 from dynaconf import settings
-from typer import run
-
 from fexservice.consumer import fetch_github
 from fexservice.logger import logger
+from typer import run
 
 cron = sched.scheduler(timefunc=time.time)
 
@@ -27,9 +26,7 @@ def enqueue(action: Callable):
     # new_delay = datetime.now().replace(second=0, microsecond=0)
     new_delay += timedelta(seconds=settings.DELAY)
     logger.info(f"Next call will be made at {new_delay}")
-    cron.enterabs(
-        new_delay.timestamp(), priority=settings.PRIORITY, action=action
-    )
+    cron.enterabs(new_delay.timestamp(), priority=settings.PRIORITY, action=action)
 
 
 def task_fetch_github():
